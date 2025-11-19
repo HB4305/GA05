@@ -76,12 +76,12 @@ const ShippingForm = () => {
                     <div>
                         <div>
                             <label>House Number</label>
-                            <input type="text" {...register("houseNumber")} />
+                            <input type="text" {...register("houseNumber", { required: "House Number is required" })} />
                             {errors.houseNumber && <span>{errors.houseNumber.message}</span>}
                         </div>
                         <div>
                             <label>Street</label>
-                            <input type="text" {...register("street")} />
+                            <input type="text" {...register("street", { required: "Street is required" })} />
                             {errors.street && <span>{errors.street.message}</span>}
                         </div>
                     </div>
@@ -90,6 +90,7 @@ const ShippingForm = () => {
                         <label>City / Province</label>
                         <select
                             {...register("city", {
+                                required: "Please select a city",
                                 onChange: (e) => handleProvinceChange(e)
                             })}
                         >
@@ -104,7 +105,7 @@ const ShippingForm = () => {
                     <div>
                         <label>Ward</label>
                         <select
-                            {...register("ward")}
+                            {...register("ward", { required: "Please select a ward" })}
                             disabled={!wards.length || loading}
                         >
                             <option value="">-- Select Ward --</option>
