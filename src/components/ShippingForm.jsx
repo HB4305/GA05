@@ -115,7 +115,6 @@ const ShippingForm = () => {
       setIsSubmitting(false);
     }
   };
-
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 to-slate-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-2xl">
