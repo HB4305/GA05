@@ -9,6 +9,7 @@ const ShippingForm = () => {
     handleSubmit,
     formState: { errors },
     setValue,
+    reset
   } = useForm({
     mode: "onBlur",
     defaultValues: {
@@ -104,6 +105,8 @@ const ShippingForm = () => {
 
       alert(message);
 
+      reset();
+      setWards([])
       // Clear success message after 3 seconds
       setTimeout(() => setSubmitSuccess(false), 3000);
     } catch (error) {
@@ -142,14 +145,6 @@ const ShippingForm = () => {
               </div>
             )}
 
-            {/* Success Alert */}
-            {submitSuccess && (
-              <div className="rounded-md bg-green-50 border border-green-200 p-4">
-                <p className="text-sm font-medium text-green-800">
-                  ✓ Shipping address saved successfully!
-                </p>
-              </div>
-            )}
 
             {/* House Number and Street Row */}
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
